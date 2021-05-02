@@ -2,7 +2,6 @@ base:
   project: winequality-project
   random_state: 42
   target_col: TARGET
-  n_jobs: -1
 
 data_source:
   data_path: data_given\\winequality.csv
