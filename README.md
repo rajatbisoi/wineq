@@ -18,4 +18,16 @@ pip install -r requirements.txt
 '''
 
 
+downlaod wine data from kaggle
+
+
+
+git init
+dvc init
+dvc add data_given\winequality.csv
+git add .
+git commit -m "first commit"
+
+
+
 
