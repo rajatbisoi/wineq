@@ -1,6 +1,6 @@
 action: GLOB, msg: packaging
 cwd: D:\ratz_work\wineapp
-cmd: 'e:\anaconda\envs\winequality\python.exe' setup.py sdist --formats=zip --dist-dir 'D:\ratz_work\wineapp\.tox\dist'
+cmd: 'e:\anaconda\envs\winequality\python.exe' setup.py sdist --formats=zip --dist-dir '.tox\dist'
 running sdist
 running egg_info
 writing src.egg-info\PKG-INFO
@@ -37,8 +37,7 @@ copying tests\__init__.py -> src-0.0.1\tests
 copying tests\conftest.py -> src-0.0.1\tests
 copying tests\test_config.py -> src-0.0.1\tests
 Writing src-0.0.1\setup.cfg
-creating D:\ratz_work\wineapp\.tox\dist
-creating 'D:\ratz_work\wineapp\.tox\dist\src-0.0.1.zip' and adding 'src-0.0.1' to it
+creating '.tox\dist\src-0.0.1.zip' and adding 'src-0.0.1' to it
 adding 'src-0.0.1\PKG-INFO'
 adding 'src-0.0.1\README.md'
 adding 'src-0.0.1\setup.cfg'
