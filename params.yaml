@@ -15,9 +15,13 @@ split_data:
   test_size: 0.2
  
 estimators:
-  ElsticNet:
+  ElasticNet:
     params:
       alpha: 0.88
       l1_ratio: 0.89
 
 model_dir: saved_models
+
+reports:
+  params : report\\params.json
+  scores : report\\scores.json
