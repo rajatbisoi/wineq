@@ -46,10 +46,13 @@ def validate_input(dict_request):
         actual_cols = schema.keys()
         if col not in actual_cols:
             raise NotInCols
+
     def _validate_values(col, val):
         schema = get_schema()
+        print(*dict_request[col])
         if not (schema[col]["min"] <= float(*dict_request[col]) <= schema[col]["max"]):
             raise NotInRange
+
     for col,val in dict_request.items():
         _validate_cols(col)
         _validate_values(col,val)
