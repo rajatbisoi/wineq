@@ -3,6 +3,8 @@ import os
 import json
 import joblib
 import numpy as np
+import logging
+logging.basicConfig(filename='log_filename.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 params_path = "params.yaml"
 schema_path = os.path.join("prediction_service","schema_in.json")
@@ -57,10 +59,11 @@ def validate_input(dict_request):
 
 def form_response(dict_request):
     if validate_input(dict_request):
-        data = dict_request.values()
-        # data = [ i[1][0] for i in dict(dict_request).items()]
-        print(data)
-        data = [list(map(float,data))]
+        # data = dict_request.values()
+        data = np.array([ float(i[1][0]) for i in dict(dict_request).items()]).reshape(1,-1)
+        # print(data)
+        logging.ERROR(data)
+        # data = [list(map(float,data))]
         response = predict(data)
         return response
 
@@ -68,8 +71,8 @@ def api_response(dict_request):
     try:
         if validate_input(dict_request):
             data = np.array([ i[1][0] for i in dict(dict_request).items()]).reshape(1,-1)
+            # data = np.array([list(dict_request.values())])
             print(data.shape)
-            data = np.array([list(dict_request.values())])
             print(data)
             response = predict(data)
             response = {"response": response}
